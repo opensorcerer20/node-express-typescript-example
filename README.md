@@ -6,9 +6,9 @@ source: https://blog.logrocket.com/express-typescript-node/
 
 - [x] 1. Initialize the project
 - [x] 2. Configure TypeScript
-- [ ] 3. Environment configuration (typed environment variables)
-- [ ] 4. Model (in-memory data)
-- [ ] 5. Controller (CRUD logic)
+- [x] 3. Environment configuration (typed environment variables)
+- [x] 4. Model (in-memory data)
+- [x] 5. Controller (CRUD logic)
 - [ ] 6. Routes
 - [ ] 7. Global error handling middleware
 - [ ] 8. App setup
