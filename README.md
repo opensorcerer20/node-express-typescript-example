@@ -9,9 +9,10 @@ source: https://blog.logrocket.com/express-typescript-node/
 - [x] 3. Environment configuration (typed environment variables)
 - [x] 4. Model (in-memory data)
 - [x] 5. Controller (CRUD logic)
-- [ ] 6. Routes
-- [ ] 7. Global error handling middleware
-- [ ] 8. App setup
-- [ ] 9. Server entry point
+- [x] 6. Routes
+- [x] 7. Global error handling middleware
+- [x] 8. App setup
+- [x] 9. Server entry point
+- [ ] Testing with Jest
 
 # Notes

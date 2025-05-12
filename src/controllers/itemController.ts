@@ -1,5 +1,6 @@
-import { Request, Response, NextFunction } from "express";
-import { items, Item } from "../models/item";
+import { NextFunction, Request, Response } from 'express';
+
+import { Item, items } from '../models/item';
 
 // Create
 export const createItem = (req: Request, res: Response, next: NextFunction) => {
@@ -32,7 +33,7 @@ export const getItemById = (
     const id = parseInt(req.params.id, 10);
     const item = items.find((i) => i.id === id);
     if (!item) {
-      res.status(404).json({ message: "Item not found" });
+      res.status(404).json({ message: 'Item not found' });
     }
     res.json(item);
   } catch (error) {
@@ -47,7 +48,7 @@ export const updateItem = (req: Request, res: Response, next: NextFunction) => {
     const { name } = req.body;
     const itemIndex = items.findIndex((i) => i.id === id);
     if (itemIndex === -1) {
-      res.status(404).json({ message: "Item not found" });
+      res.status(404).json({ message: 'Item not found' });
     }
     items[itemIndex].name = name;
     res.json(items[itemIndex]);
@@ -62,7 +63,7 @@ export const deleteItem = (req: Request, res: Response, next: NextFunction) => {
     const id = parseInt(req.params.id, 10);
     const itemIndex = items.findIndex((i) => i.id === id);
     if (itemIndex === -1) {
-      res.status(404).json({ message: "Item not found" });
+      res.status(404).json({ message: 'Item not found' });
       return;
     }
 
