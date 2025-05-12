@@ -14,5 +14,6 @@ source: https://blog.logrocket.com/express-typescript-node/
 - [x] 8. App setup
 - [x] 9. Server entry point
 - [ ] Testing with Jest
+- [ ] Setting up Docker container
 
 # Notes
