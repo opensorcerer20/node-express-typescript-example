@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 // Routes
-app.use('api/items', itemRoutes); // ? what does this do? applies routes to api/items?
+app.use('/api/items', itemRoutes); // applies routes to api/items, INITIAL SLASH VERY IMPORTANT
 
 // Global Error Handler (after routes)
 app.use(errorHandler);
