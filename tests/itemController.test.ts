@@ -1,5 +1,7 @@
 import { Request, Response } from 'express';
+import request from 'supertest';
 
+import app from '../src/app';
 import {
   createItem,
   deleteItem,
@@ -7,6 +9,23 @@ import {
   updateItem,
 } from '../src/controllers/itemController';
 import { items } from '../src/models/item';
+
+// @todo move this to a separate test file
+// @todo test getItem and getItems (need to test json return from route)
+describe('GET /', () => {
+  it('should return 404', () => {
+    return request(app).get('/').expect(404);
+  });
+  it('should return 200 with no items on get', () => {
+    return request(app)
+      .get('/api/items')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .expect((res) => {
+        res.body.length = 0;
+      });
+  });
+});
 
 describe('Item Controller', () => {
   it('should return an empty array when no items exist', () => {
@@ -76,6 +95,4 @@ describe('Item Controller', () => {
     expect(items.length).toBe(1);
     expect(items[0]?.name).toBe('test two');
   });
-
-  // @todo test getItem and getItems (need to test json return from route
 });
